@@ -15,7 +15,7 @@ before_install:
 
 language: go
 go:
-  - 1.12
+  - 1.11
   # go v1.13 failed to build due to... "sudo apt-get update" failed and exited with 100" on 11-Sept-2019
 install:
   - sudo pip install Pygments
