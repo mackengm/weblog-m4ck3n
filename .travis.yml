@@ -1,0 +1,65 @@
+## From https://github.com/narendrasoni1989/react-site/blob/master/.travis.yml and
+##   http://evanbrown.io/post/hugo-on-the-go/
+
+---
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+
+language: go
+go:
+  - 1.13
+install:
+  - sudo pip install Pygments
+  - go get github.com/spf13/hugo
+script: hugo
+
+notifications:
+  email:
+    on_success: change # only if status change from fail to success
+    on_failure: always # if there is a fail
+    recipients:
+      - mark.mcfate@icloud.com
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build --tag summittdweller/weblog-sd:latest .
+  - docker push summittdweller/weblog-sd:latest
+
+  # - docker image build -t blog-update .
+  # - docker tag blog-update summittdweller/weblog-sd:latest
+  # - docker push summittdweller/weblog-sd:latest
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: echo "deployment successful...."
+  on:
+    branch: ["master"]
+
+# language: go
+# go:
+#   - 1.4
+# sudo: required
+# install:
+#   - sudo pip install Pygments
+#   - go get github.com/spf13/hugo
+# script: hugo -t casper
+# deploy:
+#   provider: s3
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
+#   bucket: evanbrown.io
+#   region: us-west-2
+#   endpoint: evanbrown.io.s3-website-us-west-2.amazonaws.com
+#   local-dir: public
+#   skip_cleanup: true
+#   on:
+#     repo: evandbrown/evanbrown.io

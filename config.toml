@@ -1,0 +1,49 @@
+baseURL = "https://summittdweller.com/blogs/mark/"
+canonifyURLs = true
+languageCode = "en-us"
+title = "Personal Blog"
+theme = "internet-weblog"
+enableEmoji = true
+pygmentsstyle = "emacs"
+Paginate = 10
+SectionPagesMenu = "main"
+googleAnalytics = "UA-146526628-2"
+
+[author]
+   Handle = "SummittDweller"
+   FirstName = "Mark"
+   LastName = "McFate"
+   # AboutPage = "/about"
+   Location = "Toledo, Iowa"
+   FlickrID = "97761917@N02"
+
+[params]
+   build = 49     # this value is auto-incremened using 'perl' in push-update.sh
+   Description = "Personal weblog of web professional, geocacher, camper, and volunteer, Mark McFate."
+   ShowCopyright = true
+   RSSEnabled = true
+   RSSSections = [ "Posts", "Microposts", "Photos" ]
+   RSSMicropostTitles = false
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[[menu.main]]
+  name = "Microposts"
+  weight = 1
+  identifier = "microposts"
+  url = "/microposts/"
+
+[[menu.main]]
+  name = "Posts"
+  weight = 2
+  identifier = "posts"
+  url = "/posts/"
+
+[[menu.main]]
+  name = "Photos"
+  weight = 3
+  identifier = "photos"
+  url = "/photos/"
