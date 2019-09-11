@@ -48,6 +48,13 @@ RUN minify --recursive --verbose \
 
 # Part 3
 FROM nginx:alpine
+COPY --from=2 /data/public /usr/share/nginx/html
+LABEL maintainer Mark A. McFate <mark.mcfate@icloud.com>
+#COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
+WORKDIR /usr/share/nginx/html
+#COPY --from=2 /data/public /var/www/site
+#WORKDIR /var/www/site
+
 LABEL maintainer Mark A. McFate <mark.mcfate@icloud.com>
 COPY --from=2 /data/public /var/www/site
 WORKDIR /var/www/site
