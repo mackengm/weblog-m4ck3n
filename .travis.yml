@@ -15,7 +15,8 @@ before_install:
 
 language: go
 go:
-  - 1.13
+  - 1.12
+  # go v1.13 failed to build due to... "sudo apt-get update" failed and exited with 100" on 11-Sept-2019
 install:
   - sudo pip install Pygments
   - go get github.com/spf13/hugo
