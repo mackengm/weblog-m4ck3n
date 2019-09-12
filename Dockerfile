@@ -13,7 +13,6 @@ RUN git clone https://github.com/SummittDweller/internet-weblog.git themes/inter
 # Part 1
 FROM klakegg/hugo:0.55.6-ext-alpine
 # FROM skyscrapers/hugo:0.48
-# FROM skyscrapers/hugo:0.46
 COPY --from=0 /data /data
 WORKDIR /data
 RUN hugo
@@ -54,7 +53,3 @@ LABEL maintainer Mark A. McFate <mark.mcfate@icloud.com>
 WORKDIR /usr/share/nginx/html
 #COPY --from=2 /data/public /var/www/site
 #WORKDIR /var/www/site
-
-LABEL maintainer Mark A. McFate <mark.mcfate@icloud.com>
-COPY --from=2 /data/public /var/www/site
-WORKDIR /var/www/site

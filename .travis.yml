@@ -24,7 +24,8 @@ script: hugo
 
 notifications:
   email:
-    on_success: change # only if status change from fail to success
+    on_success: always # always notify of success
+    # on_success: change # only if status change from fail to success
     on_failure: always # if there is a fail
     recipients:
       - mark.mcfate@icloud.com
@@ -34,33 +35,9 @@ after_success:
   - docker build --tag summittdweller/weblog-sd:latest .
   - docker push summittdweller/weblog-sd:latest
 
-  # - docker image build -t blog-update .
-  # - docker tag blog-update summittdweller/weblog-sd:latest
-  # - docker push summittdweller/weblog-sd:latest
-
 deploy:
   skip_cleanup: true
   provider: script
   script: echo "deployment successful...."
   on:
     branch: ["master"]
-
-# language: go
-# go:
-#   - 1.4
-# sudo: required
-# install:
-#   - sudo pip install Pygments
-#   - go get github.com/spf13/hugo
-# script: hugo -t casper
-# deploy:
-#   provider: s3
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
-#   bucket: evanbrown.io
-#   region: us-west-2
-#   endpoint: evanbrown.io.s3-website-us-west-2.amazonaws.com
-#   local-dir: public
-#   skip_cleanup: true
-#   on:
-#     repo: evandbrown/evanbrown.io
