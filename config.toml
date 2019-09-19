@@ -1,17 +1,17 @@
-baseURL = "https://summittdweller.com/blogs/mark/"
+baseURL = "https://summittdweller.com/blogs/m4ck3n/"
 canonifyURLs = true
 languageCode = "en-us"
 title = "Personal Blog"
 theme = "internet-weblog"
 enableEmoji = true
 pygmentsstyle = "emacs"
-Paginate = 25
+Paginate = 10
 SectionPagesMenu = "main"
 googleAnalytics = "UA-146526628-2"
 
 [author]
-   Handle = "SummittDweller"
-   FirstName = "Mark"
+   Handle = "M4ck3n"
+   FirstName = "Mackenzie"
    LastName = "McFate"
    # AboutPage = "/about"
    Location = "Toledo, Iowa"
