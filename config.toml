@@ -15,11 +15,11 @@ googleAnalytics = "UA-146526628-2"
    LastName = "McFate"
    # AboutPage = "/about"
    Location = "Toledo, Iowa"
-   FlickrID = "97761917@N02"
+   #FlickrID = "97761917@N02"
 
 [params]
-   build = 60     # this value is auto-incremened using 'perl' in push-update.sh
-   Description = "Personal weblog of web professional, geocacher, camper, and volunteer, Mark McFate."
+   build = 61     # this value is auto-incremened using 'perl' in push-update.sh
+   Description = "Crafty. >:3c"
    ShowCopyright = true
    RSSEnabled = true
    RSSSections = [ "Posts", "Microposts", "Photos" ]
