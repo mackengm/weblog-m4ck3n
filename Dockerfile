@@ -6,7 +6,7 @@ COPY . /data
 WORKDIR /data
 
 RUN if [ -d themes/internet-weblog ]; then rm -Rf themes/internet-weblog; fi
-RUN git clone https://github.com/SummittDweller/internet-weblog.git themes/internet-weblog
+RUN git clone https://github.com/mackengm/internet-weblog.git themes/internet-weblog
 
 ##
 
@@ -48,7 +48,7 @@ RUN minify --recursive --verbose \
 # Part 3
 FROM nginx:alpine
 COPY --from=2 /data/public /usr/share/nginx/html
-LABEL maintainer Mark A. McFate <mark.mcfate@icloud.com>
+LABEL maintainer Mackenzie G. McFate <m4ck3ngm@gmail.com>
 #COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
 WORKDIR /usr/share/nginx/html
 #COPY --from=2 /data/public /var/www/site

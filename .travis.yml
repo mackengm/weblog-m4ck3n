@@ -28,12 +28,12 @@ notifications:
     # on_success: change # only if status change from fail to success
     on_failure: always # if there is a fail
     recipients:
-      - mark.mcfate@icloud.com
+      - m4ck3ngm@gmail.com
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build --tag summittdweller/weblog-sd:latest .
-  - docker push summittdweller/weblog-sd:latest
+  - docker build --tag summittdweller/weblog-m4ck3n:latest .
+  - docker push summittdweller/weblog-m4ck3n:latest
 
 deploy:
   skip_cleanup: true
