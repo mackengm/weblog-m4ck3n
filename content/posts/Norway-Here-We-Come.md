@@ -1,11 +1,11 @@
 ---
 publishDate: 2019-06-12
 lastmod: 2019-08-06T22:00:19-05:00
-title: Travel...MSP to CDG to OSL to KKN
-location: Minneapolis/Paris/Oslo/Kirkenes
+title: Template?
+location: Unknowm
 camera: iPhone 8
 weight: -20190719
-draft: false
+draft: true
 ---
 
 <figure>
