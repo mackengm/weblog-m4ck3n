@@ -1,4 +1,4 @@
-baseURL = "https://summittdweller.com/blogs/m4ck3n/"
+baseURL = "https://blog.m4ck3n.com/"
 canonifyURLs = true
 languageCode = "en-us"
 title = "Personal Blog"
