@@ -32,8 +32,8 @@ notifications:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build --tag mackengm/weblog-m4ck3n:latest .
-  - docker push mackengm/weblog-m4ck3n:latest
+  - docker build --tag m4ck3ngm/weblog-m4ck3n:latest .
+  - docker push m4ck3ngm/weblog-m4ck3n:latest
 
 deploy:
   skip_cleanup: true
